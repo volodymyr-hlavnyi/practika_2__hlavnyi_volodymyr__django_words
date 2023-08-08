@@ -40,9 +40,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-LOCAL_APPS = [
-    "apps.base",
-]
+LOCAL_APPS = ["apps.base", "apps.words"]
 
 THIRD_PARTY_APPS = [
     "bootstrap5",
