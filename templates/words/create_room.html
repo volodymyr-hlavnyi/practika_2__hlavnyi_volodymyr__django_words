@@ -1,0 +1,14 @@
+{% extends "_helpers/_base.html" %}
+
+{% block content %}
+    <h1>
+       Create room
+    </h1>
+
+    <form method="post" action="{% url 'words:create_room' %}">
+        {% csrf_token %}
+        <label for="room_name">Назва кімнати:</label>
+        <input type="text" id="room_name" name="room_name" required>
+        <button type="submit">Створити кімнату</button>
+    </form>
+{% endblock %}
