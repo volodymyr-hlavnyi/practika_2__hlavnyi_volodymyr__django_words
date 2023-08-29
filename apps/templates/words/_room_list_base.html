@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col"></th>
+        <th>PK</th>
+        <th>Room name</th>
+    </tr>
+    </thead>
+    {% for room in object_list %}
+        <tr>
+            <th scope="row"></th>
+            <td>{{ room.pk }}</td>
+            <td>{{ room.name_of_room }}</td>
+        </tr>
+    {% endfor %}
+</table>

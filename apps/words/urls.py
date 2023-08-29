@@ -19,6 +19,8 @@ urlpatterns = [
 
     path("room_detail/", views.delete_words_view, name="gamewords_delete"),
 
-    path('room/<int:room_id>/other-rooms/', views.other_rooms_list, name='other_rooms_list')
+    path('room/<int:room_id>/other-rooms/', views.other_rooms_list, name='other_rooms_list'),
+
+    path('room/list/', views.other_rooms_list, name='other_rooms_list'),
 
 ]

@@ -1,6 +1,7 @@
 import logging
 
-from apps.words.models import GameWord
+from apps.words.models import GameWord, Room
+
 
 # from apps.words.services.generate_animals import generate_animals
 
@@ -37,7 +38,7 @@ def check_word(word: str):
         return True
 
 
-def save_word(word: str) -> None:
+def save_word(word: str, room_id: int) -> None:
     logger = logging.getLogger("django")
 
     queryset = GameWord.objects.all()
@@ -45,7 +46,9 @@ def save_word(word: str) -> None:
     logger.info(f"Current amount of words before: {queryset.count()}")
 
     if check_word(word=word):
+        room = Room.objects.get(id=room_id)  # Отримуємо об'єкт кімнати за room_id
         new_word = create_object_word(word=word)
+        new_word.room = room  # Встановлюємо кімнату для об'єкта GameWord
         new_word.save()
 
     logger.info(f"Current amount of words after: {queryset.count()}")

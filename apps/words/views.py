@@ -19,7 +19,8 @@ def GameWordsPlay_view(request):
 
         if form.is_valid():
             word = form.cleaned_data["word"]
-            save_word(word=word)
+            room = Room.objects.get(id=1)
+            save_word(word=word, room=room)
 
     else:
         form = PlayForm()

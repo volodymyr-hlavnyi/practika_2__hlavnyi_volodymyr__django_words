@@ -4,7 +4,7 @@
     <h1>Other rooms {{ current_room.name_of_room }}</h1>
     <ul>
         {% for other_room in other_rooms %}
-            <li><a href="{% url 'room_detail' room_id=other_room.number_of_room %}">{{ other_room.number_of_room }}</a></li>
+            <li><a href="{% url 'room_detail' room_id=other_room.pk %}">{{ other_room.pk }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
