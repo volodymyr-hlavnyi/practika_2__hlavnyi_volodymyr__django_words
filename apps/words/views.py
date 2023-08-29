@@ -45,9 +45,18 @@ def create_room(request):
     if request.method == 'POST':
         room_name = request.POST['room_name']
         Room.objects.create(name_of_room=room_name)
-        return redirect('room_list')
+        return redirect('words:room_list')
 
     return render(request, 'words/create_room.html')
+
+
+def room_list_view(request):
+    rooms = Room.objects.all()
+    return render(
+        request,
+        'words/room_list.html',
+        {'rooms': rooms}
+    )
 
 
 def room_detail_views(request, room_id):

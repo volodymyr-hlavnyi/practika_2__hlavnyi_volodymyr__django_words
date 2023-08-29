@@ -21,6 +21,6 @@ urlpatterns = [
 
     path('room/<int:room_id>/other-rooms/', views.other_rooms_list, name='other_rooms_list'),
 
-    path('room/list/', views.other_rooms_list, name='other_rooms_list'),
+    path('room_list/', views.room_list_view, name='room_list'),
 
 ]
