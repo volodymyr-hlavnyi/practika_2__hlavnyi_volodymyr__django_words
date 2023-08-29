@@ -1,2 +1,1 @@
-from .gameword import GameWord
-from .room import Room
+from .gameword import Room, GameWord
